@@ -11,33 +11,18 @@
   <p></p>
 </div>
 <div style="display:flex; justify-content:flex-start; color:aliceblue; font-size:medium; ">
-  <p>Selecionados:<br />
+  <p>
+    Selecionados:<br />
     <span id="spanSelecionados">0</span>  de  8 filmes
   </p>
   <p></p>
 </div>
 
-<section class="content" >
-
+<section class="content">
   <div class="row">
-    <div class="col-sm-6 col-xs-12">
-
+    <div *ngFor="let filme of filmes" class="col-sm-4 col-xs-12">
+      <app-filme [filme]="filme"></app-filme>
     </div>
-    <table id="table1" class="table" style="margin-top:2%; ">
-      <tr>
-        <th>
-
-        </th>
-      </tr>
-      <tr>
-        <td style="background-color:#ffffff; border: 1px solid #ffffff; padding:10px">
-          <label><input type="checkbox" name="chkfilmes" onclick="" class="lista" value="" /> </label>
-          <p></p>
-        </td>
-      </tr>
-      <tr></tr>
-    </table>
   </div>
-
 </section>
 
