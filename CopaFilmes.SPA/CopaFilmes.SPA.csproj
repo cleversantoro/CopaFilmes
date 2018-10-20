@@ -44,6 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\package-lock.json" />
     <None Remove="ClientApp\src\app\app.route.ts" />
     <None Remove="ClientApp\src\app\filmes\filme.model.ts" />
   </ItemGroup>
