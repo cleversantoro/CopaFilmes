@@ -8,20 +8,21 @@ import { HttpModule } from '@angular/http';
 import { ROUTES } from './app.routes';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { FilmesComponent } from './filmes/filmes.component';
 import { FilmeComponent } from './filmes/filme/filme.component';
 import { FilmesService } from './filmes/filmes.service';
-
+import { HeaderComponent } from './header/header.component';
+import { PlacarComponent } from './placar/placar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
     HomeComponent,
     FilmesComponent,
-    FilmeComponent
+    FilmeComponent,
+    HeaderComponent,
+    PlacarComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

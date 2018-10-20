@@ -1,26 +1,28 @@
 <br>
 <div class="jumbotron">
-  <h6 ALIGN="center"> CAMPEONATO DE FILMES</h6>
-  <h3 ALIGN="center">Fase de Seleção </h3>
-  <h6 ALIGN="center" FONT="Tahoma" SIZE="2">Selecione 8 filmes que você deseja que entrem na competição e depois pressione o <br> botão Gerar Meu Campeonato para prosseguir.</h6>
+  <h6 class="text-center"> CAMPEONATO DE FILMES</h6>
+  <h2 class="text-center"><strong>Fase de Seleção</strong></h2>
+  <h6 class="text-center">Selecione 8 filmes que você deseja que entrem na competição e depois pressione o <br> botão Gerar Meu Campeonato para prosseguir.</h6>
 </div>
-<p></p>
 
-<div style="display:flex; justify-content:flex-end ">
-  <input type="submit" value="Gerar meu Campeonato" id="btnGerar" name="btnGerar" class="botaoEnviar" />
-  <p></p>
-</div>
-<div style="display:flex; justify-content:flex-start; color:aliceblue; font-size:medium; ">
-  <p>
-    Selecionados:<br />
-    <span id="spanSelecionados">0</span>  de  8 filmes
-  </p>
-  <p></p>
-</div>
+<section class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <p>Selecionados:<br /> <span id="spanSelecionados">0</span> de 8 filmes
+      </p>
+    </div>
+
+    <div class="col-sm-6 ">
+      <a class="btn btn-primary btn-lg pull-right" id="btnGerar" [routerLink]="['/placar']">Gerar meu Campeonato</a>
+      <p></p>
+    </div>
+
+  </div>
+</section>
 
 <section class="content">
   <div class="row">
-    <div *ngFor="let filme of filmes" class="col-sm-4 col-xs-12">
+    <div *ngFor="let filme of filmes" class="col-sm-3 col-xs-12">
       <app-filme [filme]="filme"></app-filme>
     </div>
   </div>

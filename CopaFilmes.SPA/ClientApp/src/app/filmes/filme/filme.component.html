@@ -1,11 +1,12 @@
-  <div class="place-info-box" >
-    <span class="place-info-box-icon"><img [src]="filme.nota" /></span>
-
-    <div class="place-info-box-content">
-      <!--<span class="place-info-box-text">{{}}</span>
-      <span class="place-info-box-star"><i class="fa fa-star"></i> {{}}</span>
-      <span class="place-info-box-detail">{{}}</span>
-      <span class="place-info-box-detail">{{}}</span>-->
+<div class="item-filme">
+  <div class="item-filme-checkbox ">
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="ck-filme" value="{{ filme.id }}" width="10">
     </div>
-    <!-- /.info-box-content -->
   </div>
+  <div class="item-filme-content">
+    <h5 class="card-title"><strong>{{ filme.titulo }}</strong></h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ filme.ano }}</h6>
+  </div>
+</div>
+
