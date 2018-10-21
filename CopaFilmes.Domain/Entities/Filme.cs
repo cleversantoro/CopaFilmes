@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace CopaFilmes.SPA.Models
+namespace CopaFilmes.Domain.Entity
 {
     public class Filme
     {
@@ -12,5 +9,6 @@ namespace CopaFilmes.SPA.Models
         public int ano { get; set; }
         public double nota { get; set; }
 
+        //public decimal SetAvageRatingDecimal => Convert.ToDecimal(AverageRating.Replace('.', ','));
     }
 }

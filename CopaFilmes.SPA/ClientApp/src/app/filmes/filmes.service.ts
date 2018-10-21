@@ -21,4 +21,10 @@ export class FilmesService {
     //.catch(ErrorHandler.handleError)
   }
 
+  gerarCampeonato(): Observable<Filme[]> {
+    return this.http.get('api/Filmes/GerarCampeonato')
+      .map(response => response.json());
+    //.catch(ErrorHandler.handleError)
+  }
+
 }

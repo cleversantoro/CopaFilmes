@@ -1,7 +1,11 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using CopaFilmes.SPA.Models;
+//using CopaFilmes.SPA.Models;
 using Newtonsoft.Json;
+using CopaFilmes.Domain.Entity;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System;
 
 namespace CopaFilmes.SPA.Controllers
 {
@@ -28,21 +32,44 @@ namespace CopaFilmes.SPA.Controllers
             "{\"id\":\"tt6499752\",\"titulo\":\"Upgrade\",\"ano\":2018,\"nota\":7.8}"
         };
 
+
         [HttpGet("[action]")]
-        public IEnumerable<Filme> FilmesCopa()
+        public async Task<IEnumerable<Filme>> FilmesCopa()
         {
             var filmes = new List<Filme>();
-
-
-            foreach (var item in Filmes)
+            HttpClient client = new HttpClient();
+            try
             {
-                Filme film = JsonConvert.DeserializeObject<Filme>(item);
-                filmes.Add(film);
+                string url = "http://copafilmes.azurewebsites.net/api/filmes";
+                var response = await client.GetStringAsync(url);
+                var Filmes = JsonConvert.DeserializeObject<List<Filme>>(response);
+
+                //foreach (var item in Filmes)
+                //{
+                //    Filme film = JsonConvert.DeserializeObject<Filme>(item);
+                //    filmes.Add(film);
+                //}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
             return filmes;
         }
 
+
+        [HttpGet("[action]")]
+        public IEnumerable<Filme> GerarCampeonato(List<Filme> filmes)
+        {
+            Campeonato campeonato = Campeonato.RealizarCampeonato(filmes);
+            GrupoOitavas oitavas =  campeonato.grupoOitavas;
+            GrupoQuartas quartas = campeonato.grupoQuartas;
+            SemiFinal semifinal = campeonato.semiFinal;
+            Final final= campeonato.final;
+
+            return final.GrupoFinal; //filmes;
+        }
 
     }
 }

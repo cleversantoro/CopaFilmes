@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CopaFilmes.Domain\CopaFilmes.Domain.csproj" />
     <ProjectReference Include="..\CopaFilmes.SPA\CopaFilmes.SPA.csproj" />
   </ItemGroup>
 

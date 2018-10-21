@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Filme } from './filme/filme.model'
 import { FilmesService } from '../filmes/filmes.service'
@@ -14,15 +14,19 @@ import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-filmes',
-  templateUrl: './filmes.component.html'})
+  templateUrl: './filmes.component.html'
+})
 export class FilmesComponent {
   filmes: Filme[];
 
   constructor(private filmesService: FilmesService) { }
 
   ngOnInit() {
-
     this.filmesService.filmescopa().subscribe(filmes => (this.filmes = filmes));
+  }
+
+  gerarCampeonato() {
+    this.filmesService.gerarCampeonato().subscribe(filmes => (this.filmes = filmes));
   }
 
 }

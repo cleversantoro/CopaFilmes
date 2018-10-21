@@ -54,6 +54,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CopaFilmes.Domain\CopaFilmes.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\filmes\filme\filme.model.ts" />
   </ItemGroup>
 

@@ -2,8 +2,8 @@ using System;
 using Xunit;
 using CopaFilmes.SPA.Controllers;
 using System.Collections.Generic;
-using CopaFilmes.SPA.Models;
 using Newtonsoft.Json;
+using CopaFilmes.Domain.Entity;
 
 namespace CopaFilmes.Test
 {
@@ -42,27 +42,19 @@ namespace CopaFilmes.Test
         };
 
         [Fact]
-        public void FilmesCopaTest()
+        public void GerarCampeonatoTest()
         {
-            //var atual = new List<Filme>();
-            //foreach (var item in Filmes)
-            //{
-            //    Filme film = JsonConvert.DeserializeObject<Filme>(item);
-            //    atual.Add(film);
-            //}
+            var atual = new List<Filme>();
+            foreach (var item in selecao)
+            {
+                Filme film = JsonConvert.DeserializeObject<Filme>(item);
+                atual.Add(film);
+            }
 
+            FilmesController filmes = new FilmesController();
+            var result = filmes.GerarCampeonato(atual);
 
-            //FilmesController filmes = new FilmesController();
-
-            //var result  = filmes.FilmesCopa();
-            //var films = new List<Filme>();
-
-            Assert.Equal("1", "1");
-        }
-
-        [Fact]
-        public void PartidaTest()
-        {
+            Assert.Equal("Vingadores: Guerra Infinita", ((List<Filme>)result)[0].titulo);
 
         }
     }
