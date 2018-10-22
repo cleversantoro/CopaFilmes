@@ -20,7 +20,7 @@ export class FilmesService {
 
   gerarCampeonato(filmes:Filme[]): Observable<Filme[]> {
     return this.http.get(`api/Filmes/GerarCampeonato/${filmes}`)
-      .map(response => response.json(),
+      .map(response => <Filme[]>response.json(),
         this.router.navigate(['/placar'])
       )
   }
