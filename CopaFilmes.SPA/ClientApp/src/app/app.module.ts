@@ -14,6 +14,7 @@ import { FilmeComponent } from './filmes/filme/filme.component';
 import { FilmesService } from './filmes/filmes.service';
 import { HeaderComponent } from './header/header.component';
 import { PlacarComponent } from './placar/placar.component';
+import { FilmeService } from './filmes/filme/filme.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { PlacarComponent } from './placar/placar.component';
     FormsModule,
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules })
   ],
-  providers: [FilmesService],
+  providers: [FilmesService,FilmeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

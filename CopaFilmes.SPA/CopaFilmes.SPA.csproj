@@ -47,6 +47,11 @@
     <None Remove="ClientApp\package-lock.json" />
     <None Remove="ClientApp\src\app\app.route.ts" />
     <None Remove="ClientApp\src\app\filmes\filme.model.ts" />
+    <None Remove="ClientApp\src\app\filmes\filmes.model.js" />
+    <None Remove="ClientApp\src\app\filmes\filmes.model.js" />
+    <None Remove="ClientApp\src\app\filmes\filmes.model.js.map" />
+    <None Remove="ClientApp\src\app\filmes\filmes.model.js.map" />
+    <None Remove="ClientApp\src\app\filmes\filmes.model.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +63,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\filmes\filmes.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\filmes\filme\filme.model.ts" />
   </ItemGroup>
 

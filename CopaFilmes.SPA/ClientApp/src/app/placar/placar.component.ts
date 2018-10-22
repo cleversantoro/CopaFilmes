@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 //import { trigger, state, style, transition, animate } from '@angular/animations'
 
-//import { Filme } from './filme.model'
+import { Filme } from '../filmes/filme/filme.model'
 
 //import { HttpClient } from '@angular/common/http';
 
@@ -14,7 +14,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PlacarComponent implements OnInit {
 
-  //@Input() filme: Filme
+  filmes: Filme[];
 
   constructor() { }
 

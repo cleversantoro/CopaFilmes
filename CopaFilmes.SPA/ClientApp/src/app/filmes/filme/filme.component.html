@@ -1,7 +1,10 @@
 <div class="item-filme">
   <div class="item-filme-checkbox ">
-    <div >
-      <input type="checkbox"  id="ck-filme" value="{{ filme.id }}" width="10">
+    <div>
+      <!--<input type="checkbox" class="checkbox" name="ckfilme" (click)="updateCheckedOptions(filme, $event)" value="{{ filme }}" width="10">-->
+      <input type="checkbox" class="check" name="ckfilme" value="{{ filme }}"
+             (change)="changeCheck($event, filme)"
+             [disabled]="checkDisable(filme)">
     </div>
   </div>
   <div class="item-filme-content">

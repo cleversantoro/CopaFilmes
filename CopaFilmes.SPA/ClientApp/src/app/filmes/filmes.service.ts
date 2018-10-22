@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core'
 import { Http } from '@angular/http'
-
+import { Router } from '@angular/router'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 
 import { Filme } from "./filme/filme.model"
 
-//import { FILMES_API } from '../app.api'
-//import {ErrorHandler} from '../app.error-handler'
-
 @Injectable()
 export class FilmesService {
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private router: Router) { }
 
   filmescopa(): Observable<Filme[]> {
     return this.http.get('api/Filmes/FilmesCopa')
@@ -21,10 +18,11 @@ export class FilmesService {
     //.catch(ErrorHandler.handleError)
   }
 
-  gerarCampeonato(): Observable<Filme[]> {
-    return this.http.get('api/Filmes/GerarCampeonato')
-      .map(response => response.json());
-    //.catch(ErrorHandler.handleError)
+  gerarCampeonato(filmes:Filme[]): Observable<Filme[]> {
+    return this.http.get(`api/Filmes/GerarCampeonato/${filmes}`)
+      .map(response => response.json(),
+        this.router.navigate(['/placar'])
+      )
   }
 
 }
