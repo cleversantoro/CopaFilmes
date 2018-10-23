@@ -5,35 +5,19 @@ Projeto desenvolvido com ASP.NET Core e Angular 6, para a organização de um ca
 Utilize as instruções abaixo para conseguir executar a aplicação.
 
 Requisitos
-
-*Node.js 8.11.1
-*NET Core SDK 2.1
-*Angular CLI 6.2.5
+Node.js 8.11.1
+NET Core SDK 2.1
+Angular CLI 6.2.5
+Visual Studio 2017
 
 # Rodando a Aplicação
 
-
-cd .\Frontend\copa-filmes-app
-npm install
-ng serve
-Usualmente, a aplicação vai estar disponível no seguinte endereço:
-
-http://localhost:4200
+Baixe o projeto no 'git clone https://github.com/cleversantoro/CopaFilmes
+Abra o Projeto no Visual Studio 2017 CopaFilmes.sln
+Para rodar o site basta clicar com o botão direto no projeto "CopaFilmes.SPA", selecionar a opção "Set as StartUp Project" e apertar a tecla F5.
 
 # Executando os Testes
-
-Para executar os testes da aplicação, são necessários os seguintes passos:
-
-Backend
-À partir do diretório raiz do projeto, executar o seguinte comando:
-
-dotnet test
-Frontend
-À partir do diretório raiz do projeto, executar os seguintes comandos:
-
-cd .\Frontend\copa-filmes-app
-npm install
-ng test
+Para realizar os testes, basta ir no menu "Test", selecionar a opção "Run" -> "All Tests"
 
 # Licença
 Este projeto está sobre a licença MIT.
