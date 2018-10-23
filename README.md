@@ -5,9 +5,10 @@ Projeto desenvolvido com ASP.NET Core e Angular 6, para a organização de um ca
 Utilize as instruções abaixo para conseguir executar a aplicação.
 
 Requisitos
-Node.js 8.11.1
-NET Core SDK 2.1
-Angular CLI 6.2.5
+
+*Node.js 8.11.1
+*NET Core SDK 2.1
+*Angular CLI 6.2.5
 
 # Rodando a Aplicação
 
