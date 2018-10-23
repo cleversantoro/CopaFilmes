@@ -21,11 +21,6 @@ export class FilmeComponent implements OnInit {
 
   ngOnInit() { }
 
-  //enviaQtde() {
-  //this.qtde.emit(this.quantidade());
-  //console.log(this.quantidade())
-  //}
-
   filmes(): any {
     return this.filmeService.filmes;
   }
@@ -39,7 +34,8 @@ export class FilmeComponent implements OnInit {
 
     if (e.target.checked) {
       if (this.qtdSelecionada >= 8) {
-        alert(`Você já selecionou seus filmes. Vamos ao Campeonato.`);
+        alert(`Você já escolheu seus filmes. Selecione "GERAR MEU CAMPEONATO".`);
+        e.target.checked = false;
         return false;
       }
 
@@ -50,11 +46,6 @@ export class FilmeComponent implements OnInit {
       //console.log(this.qtdSelecionada);
     }
     else {
-      if (this.qtdSelecionada >= 8) {
-        alert(`Você já selecionou seus filmes. Vamos ao Campeonato.`);
-        return false;
-      }
-
       this.filmeService.unchecked(filme);
       this.qtdSelecionada = this.quantidade()
       this.qtde.emit(this.qtdSelecionada);

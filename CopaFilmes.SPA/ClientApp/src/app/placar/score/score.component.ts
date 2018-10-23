@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Filme } from '../../filmes/filme/filme.model'
+import { Final } from '../placar.model';
 //import { PlacarService } from '../../placar/placar.service'
 
 @Component({
@@ -7,14 +8,11 @@ import { Filme } from '../../filmes/filme/filme.model'
   templateUrl: './score.component.html'
 })
 export class ScoreComponent implements OnInit {
-  filmes: Filme[];
+  @Input() filmes: Final;
 
   constructor(
-    //private placarService: PlacarService
-  )
-  { }
+  ) { }
 
   ngOnInit() {
-    //this.filmesService.finalcopa().subscribe(final => (this.filmes = final));
   }
 }

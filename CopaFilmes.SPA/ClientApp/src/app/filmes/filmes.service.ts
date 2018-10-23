@@ -33,12 +33,20 @@ export class FilmesService {
       .map(response => {
         const rt = response.json();
         this.final = rt;
-
-        this.route.navigate(['/placar'],{ queryParams: this.final }); 
-
+        this.set("final",this.final)
+        this.route.navigate(['/placar']); 
         return rt
       })
-    //.catch(this.hadleError)
+      //.catch(this.hadleError)
 
   }
+
+  set(key: string, data: any): void {
+    try {
+      localStorage.setItem(key, JSON.stringify(data));
+    } catch (e) {
+      console.error('Error saving to localStorage', e);
+    }
+  }
+
 }
