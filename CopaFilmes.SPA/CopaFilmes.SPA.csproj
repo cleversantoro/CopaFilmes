@@ -23,10 +23,16 @@
     <Compile Remove="ClientApp\src\app\counter\**" />
     <Compile Remove="ClientApp\src\app\fetch-data\**" />
     <Compile Remove="ClientApp\src\app\nav-menu\**" />
+    <Compile Remove="ClientApp\src\assets\bootstrap\**" />
+    <Compile Remove="ClientApp\src\assets\jquery\**" />
+    <Compile Remove="ClientApp\src\assets\styles\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="ClientApp\src\app\counter\**" />
     <Content Remove="ClientApp\src\app\fetch-data\**" />
     <Content Remove="ClientApp\src\app\nav-menu\**" />
+    <Content Remove="ClientApp\src\assets\bootstrap\**" />
+    <Content Remove="ClientApp\src\assets\jquery\**" />
+    <Content Remove="ClientApp\src\assets\styles\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
@@ -34,13 +40,23 @@
     <EmbeddedResource Remove="ClientApp\src\app\counter\**" />
     <EmbeddedResource Remove="ClientApp\src\app\fetch-data\**" />
     <EmbeddedResource Remove="ClientApp\src\app\nav-menu\**" />
+    <EmbeddedResource Remove="ClientApp\src\assets\bootstrap\**" />
+    <EmbeddedResource Remove="ClientApp\src\assets\jquery\**" />
+    <EmbeddedResource Remove="ClientApp\src\assets\styles\**" />
     <None Remove="ClientApp\src\app\counter\**" />
     <None Remove="ClientApp\src\app\fetch-data\**" />
     <None Remove="ClientApp\src\app\nav-menu\**" />
+    <None Remove="ClientApp\src\assets\bootstrap\**" />
+    <None Remove="ClientApp\src\assets\jquery\**" />
+    <None Remove="ClientApp\src\assets\styles\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Controllers\SampleDataController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\favicon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,6 +72,10 @@
 
   <ItemGroup>
     <Content Include="Pages\wwwroot\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
   </ItemGroup>
 
   <ItemGroup>

@@ -8,7 +8,7 @@
 <section class="container">
   <div class="row">
     <div class="col-sm-6">
-      <p>Selecionados:<br /> <span id="spanSelecionados">{{ qtdSelecionada }}</span> de 8 filmes
+      <p>Selecionados:<br /> <span id="spanSelecionados">{{qtdSelecionada}}</span> de 8 filmes
       </p>
     </div>
 
@@ -25,7 +25,7 @@
 <section class="content">
   <div class="row">
     <div *ngFor="let filme of filmes" class="col-sm-3 col-xs-12">
-      <app-filme [filme]="filme"></app-filme>
+      <app-filme [filme]="filme" (qtde)="recebeQtde($event)" ></app-filme>
     </div>
   </div>
 </section>

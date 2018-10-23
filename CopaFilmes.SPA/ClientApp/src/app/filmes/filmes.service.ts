@@ -1,16 +1,21 @@
-import { Injectable } from '@angular/core'
+import { Injectable, Input } from '@angular/core'
 import { Http } from '@angular/http'
-import { Router } from '@angular/router'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
-
 import { Filme } from "./filme/filme.model"
+import { Router } from '@angular/router'
 
 @Injectable()
 export class FilmesService {
+  @Input() final: any;
+  @Input() qtdeSelecionada: number = 0;
 
-  constructor(private http: Http, private router: Router) { }
+  constructor(
+    private http: Http,
+    private route: Router
+
+  ) { }
 
   filmescopa(): Observable<Filme[]> {
     return this.http.get('api/Filmes/FilmesCopa')
@@ -18,11 +23,22 @@ export class FilmesService {
     //.catch(ErrorHandler.handleError)
   }
 
-  gerarCampeonato(filmes:Filme[]): Observable<Filme[]> {
-    return this.http.get(`api/Filmes/GerarCampeonato/${filmes}`)
-      .map(response => <Filme[]>response.json(),
-        this.router.navigate(['/placar'])
-      )
+  finalcopa(): Observable<Filme[]> {
+    return this.final;
   }
+  
+  gerarCampeonato(filmes: Filme[]): Observable<Filme[]> {
+    return this.http
+      .post(`api/Filmes/GerarCampeonato`, filmes)
+      .map(response => {
+        const rt = response.json();
+        this.final = rt;
 
+        this.route.navigate(['/placar'],{ queryParams: this.final }); 
+
+        return rt
+      })
+    //.catch(this.hadleError)
+
+  }
 }
