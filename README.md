@@ -1,23 +1,16 @@
 # CopaFilmes
-Programa Teste
-CopaFilmes
-Projeto que consiste numa API desenvolvida com ASP.NET Core e frontend utilizando Angular 6, para a organização de um campeonato entre os filmes selecionados.
+Projeto desenvolvido com ASP.NET Core e Angular 6, para a organização de um campeonato de filmes selecionados.
 
-Getting Started
+# Instruções
 Utilize as instruções abaixo para conseguir executar a aplicação.
 
 Requisitos
 Node.js 8.11.1
 NET Core SDK 2.1
 Angular CLI 6.2.5
-Rodando a Aplicação
-Primeiramente, é necessário executar o backend. À partir do diretório raiz do projeto, executar o seguinte comando no Powershell:
 
-dotnet run --project .\Backend\src\CopaFilmes.Api\CopaFilmes.Api.csproj
-Usualmente, o serviço WebApi vai estar disponível no endereço:
+# Rodando a Aplicação
 
-https://localhost:5001/swagger
-Para executar o frontend, à partir do diretório raiz, executar os seguintes comandos:
 
 cd .\Frontend\copa-filmes-app
 npm install
@@ -25,7 +18,9 @@ ng serve
 Usualmente, a aplicação vai estar disponível no seguinte endereço:
 
 http://localhost:4200
-Executando os Testes
+
+# Executando os Testes
+
 Para executar os testes da aplicação, são necessários os seguintes passos:
 
 Backend
@@ -38,5 +33,6 @@ Frontend
 cd .\Frontend\copa-filmes-app
 npm install
 ng test
-Licença
-Este projeto está sobre a licença MIT - veja o arquivo LICENSE para maiores detalhes.
+
+# Licença
+Este projeto está sobre a licença MIT.
