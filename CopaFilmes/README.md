@@ -1,2 +1,0 @@
-# CopaFilmes
-Programa Teste
