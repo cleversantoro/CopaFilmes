@@ -3,7 +3,7 @@ import { Filme } from './filme.model'
 import { FilmeSelecionado } from '../filmes.model'
 import { FilmeService } from './filme.service'
 import { FilmesService } from '../filmes.service';
-
+import swal from 'sweetalert2'
 
 @Component({
   selector: 'app-filme',
@@ -34,7 +34,12 @@ export class FilmeComponent implements OnInit {
 
     if (e.target.checked) {
       if (this.qtdSelecionada >= 8) {
-        alert(`Você já escolheu seus filmes. Selecione "GERAR MEU CAMPEONATO".`);
+        swal({
+          title: 'Alerta!',
+          text: 'Você já escolheu seus filmes. Selecione "GERAR MEU CAMPEONATO".',
+          type: 'info',
+          confirmButtonText: 'OK'
+        });        
         e.target.checked = false;
         return false;
       }
