@@ -55,7 +55,6 @@ namespace CopaFilmes.Test
             var result = filmes.GerarCampeonato(atual);
 
             Assert.Equal("Vingadores: Guerra Infinita", result.Campeao.titulo);
-
         }
     }
 }
