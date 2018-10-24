@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Filme } from './filme/filme.model'
 import { FilmesService } from '../filmes/filmes.service'
 import { FilmeService } from './filme/filme.service'
+import swal from 'sweetalert2'
 
 import "rxjs/add/operator/switchMap";
 import "rxjs/add/operator/do";
@@ -35,7 +36,12 @@ export class FilmesComponent {
 
   gerarCampeonato() {
     if (this.qtdSelecionada < 8) {
-      alert("Selecione seus 8 Filmes.")
+      swal({
+        title: 'Alerta!',
+        text: 'Selecione seus 8 Filmes.',
+        type: 'info',
+        confirmButtonText: 'OK'
+      });
       return false;
     }
 
