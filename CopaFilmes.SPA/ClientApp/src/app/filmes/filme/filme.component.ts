@@ -65,5 +65,6 @@ export class FilmeComponent implements OnInit {
     //console.log(this.qtdSelecionada);
     //console.log(this.filmesSelecionados);
     //return this.qtdSelecionada >= 8;
+    
   }
 }
